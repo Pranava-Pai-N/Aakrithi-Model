@@ -32,6 +32,12 @@ try:
 except Exception as e:
     print(f"Error loading model: {e}")
 
+
+@app.get("/")  
+def home():
+    return {"message": "FastAPI is running!"}
+
+
 @app.post("/predict")
 def predict(input_text: TextInput):
     try:
